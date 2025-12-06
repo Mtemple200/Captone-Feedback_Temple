@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Capstone Project Website</title>
+<style>
+/* ====== GLOBAL ====== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    background: linear-gradient(to bottom, #87e0ff, #f5f7fa);
+    transition: background 1s ease-in-out;
+}
+
+/* ====== HEADER WITH ISLAND IMAGE ====== */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 180px;
+    background: url('/mnt/data/20240922_212258.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px #000;
+    z-index: 10;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #024873, #0378a6, #03c2c8);
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    top: 180px;
+    overflow-y: auto;
+    transition: transform 0.4s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #e5e7eb;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.35);
+    transform: scale(1.05);
+}
+
+/* ====== MOBILE SIDEBAR ======*/
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 190px;
+    left: 10px;
+    background: #024873;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        transform: translateX(-260px);
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ====== MAIN CONTENT ====== */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: 100%;
+    margin-top: 200px;
+    transition: margin-left 0.4s ease;
+}
+
+@media (max-width: 900px) {
+    .content {
+        margin-left: 0;
+    }
+}
+
+h1 {
+    font-size: 40px;
+    color: #053b4b;
+    animation: fadeIn 1s ease forwards;
+}
+
+.section {
+    margin-bottom: 50px;
+    animation: fadeUp 1s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== INFO CARDS ====== */
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    max-width: 800px;
+}
+
+/* ====== GALLERY ====== */
+.gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+}
+
+/* ====== VIDEO ====== */
+.video-container video {
+    width: 560px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ====== BUTTONS ====== */
+.download-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: linear-gradient(90deg, #ff9d2f, #ff6126);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    transform: scale(1.07);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Mobile Button -->
+<div class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active');">☰ Menu</div>
+
+<!-- Header -->
+<div class="header">Tropical Capstone Adventure</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Capstone Menu</h2>
+    <a href="#about">About Project</a>
+    <a href="#howplay">How to Play</a>
+    <a href="#story">Story</a>
+    <a href="#gallery">Images</a>
+    <a href="#video">Trailer</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#links">Links</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+
+    <h1>Capstone Project</h1>
+
+    <div id="about" class="section info-card">
+        <h2>About</h2>
+        <p>This project is a tropical-themed 3D adventure platformer created in Unreal Engine 5.</p>
+    </div>
+
+    <div id="howplay" class="section info-card">
+        <h2>How to Play</h2>
+        <ul>
+            <li>WASD to move</li>
+            <li>Jump to avoid traps</li>
+            <li>Collect coins around the island</li>
+            <li>Avoid spikes or you lose!</li>
+        </ul>
+    </div>
+
+    <div id="story" class="section info-card">
+        <h2>Story</h2>
+        <p>You explore a mysterious tropical island full of traps and ancient treasure.</p>
+    </div>
+
+    <div id="gallery" class="section">
+        <h2>Screenshots</h2>
+        <div class="gallery">
+            <img src="/mnt/data/57b84491-d166-4448-b4f1-fb26da12f66b.png" />
+            <img src="/mnt/data/20240922_212258.jpg" />
+        </div>
+    </div>
+
+    <div id="video" class="section">
+        <h2>Trailer Video</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="/mnt/data/videoplayback.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+
+    <div id="downloads" class="section">
+        <h2>Downloads</h2>
+        <a class="download-btn" href="#">Download Game Build</a>
+        <a class="download-btn" href="#">Downl

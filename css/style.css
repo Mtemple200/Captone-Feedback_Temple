@@ -1,0 +1,65 @@
+/* General Page Layout */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f8fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Section Styling */
+main {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.item {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item h2 {
+  color: #004aad;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  margin-left: 1.5rem;
+}
+
+ul li {
+  margin: 0.3rem 0;
+}
+
+/* Footer */
+footer {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
